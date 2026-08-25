@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 export default function Home() {
   return (
     <main className="relative min-h-screen selection:bg-sky-500/30">
+      {/* Background Orbs */}
       <div className="orb-1" />
       <div className="orb-2" />
 
@@ -52,6 +53,46 @@ export default function Home() {
           </FadeIn>
         </section>
 
+        {/* ABOUT & SKILLS SECTION */}
+        <section id="about" className="scroll-mt-32">
+          <div className="grid md:grid-cols-5 gap-8">
+            <FadeIn className="md:col-span-3">
+              <h2 className="text-3xl font-bold mb-8">About Me</h2>
+              <GlassCard>
+                <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                  With over 5 years of experience in web development, I bridge the gap between design and engineering. I specialize in React, Next.js, and Node.js ecosystems, focusing on performance, accessibility, and exceptional user interfaces.
+                </p>
+                <p className="text-lg text-slate-300 leading-relaxed">
+                  When I'm not writing code, I'm exploring modern design patterns, contributing to open-source, or experimenting with new technologies like WebGL and AI integrations.
+                </p>
+              </GlassCard>
+            </FadeIn>
+
+            <FadeIn delay={0.2} className="md:col-span-2" id="skills">
+              <h2 className="text-3xl font-bold mb-8">Core Skills</h2>
+              <GlassCard className="h-full flex flex-col justify-center">
+                <div className="space-y-6">
+                  {[
+                    { icon: Layout, label: "Frontend", tech: "React, Next.js, Tailwind" },
+                    { icon: Terminal, label: "Backend", tech: "Node.js, Python, REST" },
+                    { icon: Database, label: "Database", tech: "PostgreSQL, MongoDB" }
+                  ].map((skill, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center border border-white/5">
+                        <skill.icon size={20} className="text-sky-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white">{skill.label}</h4>
+                        <p className="text-sm text-slate-400">{skill.tech}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </GlassCard>
+            </FadeIn>
+          </div>
+        </section>
+
         {/* PROJECTS SECTION */}
         <section id="projects" className="scroll-mt-32">
           <FadeIn>
@@ -73,7 +114,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {["Next.js", "TypeScript", "Tailwind"].map(tech => (
-                      <Badge key={tech} variant="secondary" className="bg-sky-500/10 text-sky-300 hover:bg-sky-500/20">
+                      <Badge key={tech} variant="secondary" className="bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 border-transparent">
                         {tech}
                       </Badge>
                     ))}
@@ -81,6 +122,51 @@ export default function Home() {
                 </GlassCard>
               ))}
             </div>
+          </FadeIn>
+        </section>
+
+        {/* EXPERIENCE SECTION */}
+        <section id="experience" className="scroll-mt-32">
+          <FadeIn>
+            <h2 className="text-3xl font-bold mb-8">Experience</h2>
+            <GlassCard className="space-y-8">
+              {[
+                { title: "Senior Frontend Engineer", company: "TechNova", time: "2021 - Present", desc: "Architected modern Next.js applications, improving Core Web Vitals by 40% across all client sites." },
+                { title: "Full Stack Developer", company: "Creative Agency X", time: "2018 - 2021", desc: "Built interactive web experiences and headless CMS integrations for enterprise clients." }
+              ].map((job, i) => (
+                <div key={i} className="relative pl-8 border-l border-white/10 last:pb-0 pb-8">
+                  {/* Glowing Timeline Dot */}
+                  <div className="absolute w-3 h-3 bg-sky-400 rounded-full -left-[6.5px] top-1.5 shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
+                  
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                    <h3 className="text-xl font-bold text-white">{job.title}</h3>
+                    <Badge variant="outline" className="text-sky-400 border-sky-400/20 bg-sky-400/10 mt-2 md:mt-0">
+                      {job.time}
+                    </Badge>
+                  </div>
+                  <h4 className="text-slate-300 font-medium mb-4">{job.company}</h4>
+                  <p className="text-slate-400 leading-relaxed">{job.desc}</p>
+                </div>
+              ))}
+            </GlassCard>
+          </FadeIn>
+        </section>
+
+        {/* CONTACT SECTION */}
+        <section id="contact" className="scroll-mt-32 pb-32">
+          <FadeIn>
+            <GlassCard className="text-center py-20 relative overflow-hidden">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-sky-500/20 blur-[100px] rounded-full" />
+              <h2 className="text-4xl font-bold text-white mb-6">Let's work together.</h2>
+              <p className="text-lg text-slate-400 max-w-lg mx-auto mb-10">
+                Currently looking for new opportunities. My inbox is always open whether you have a project in mind or just want to chat.
+              </p>
+              <Button size="lg" className="rounded-full font-bold px-10 h-14 text-lg" asChild>
+                <a href="mailto:hello@example.com">
+                  Say Hello
+                </a>
+              </Button>
+            </GlassCard>
           </FadeIn>
         </section>
         
