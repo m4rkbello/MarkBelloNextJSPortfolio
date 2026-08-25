@@ -121,7 +121,7 @@ export const PROJECTS_DATA = [
     title: "PANGUTANAI",
     description: "Your Intelligent AI Assistant powered by Google Gemini 2.5 Flash.",
     tags: ["React", "TailwindCSS", "Google Gemini"],
-    image: "/images/projects/pangutanai.jpg",
+    image: "/images/projects/pangutanai.png",
     link: "https://pangutanai.netlify.app/",
     github: "https://github.com/m4rkbello/pangutanAI"
   },
@@ -137,7 +137,7 @@ export const PROJECTS_DATA = [
     title: "PHILIPPINE ADDRESS SELECTOR",
     description: "A seamless web application for selecting accurate Philippine addresses dynamically.",
     tags: ["ReactJS", "Vite", "TailwindCSS"],
-    image: "/images/projects/ph-address-selector.jpg",
+    image: "/images/projects/ph-address-selector.png",
     link: "https://philippine-address-selector.netlify.app/",
     github: "https://github.com/m4rkbello/philippine-address-selector"
   },
@@ -161,7 +161,7 @@ export const PROJECTS_DATA = [
     title: "MY HEART WENT OOPS",
     description: "Interactive animations merging two photos seamlessly.",
     tags: ["ReactJS", "Vite", "Framer Motion"],
-    image: "/images/projects/myheartwentnice.jpg",
+    image: "/images/projects/myheartwentnice.png",
     link: "https://myheartwentnice.netlify.app/",
     github: "https://github.com/m4rkbello/MyHeartWentOps"
   },
@@ -169,7 +169,7 @@ export const PROJECTS_DATA = [
     title: "PARALLAX EFFECT",
     description: "A visually engaging web layout showcasing advanced CSS parallax manipulations.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
-    image: "/images/projects/markbelloparallaxeffect.jpg",
+    image: "/images/projects/markbelloparallaxeffect.png",
     link: "https://markbello-parallax-effect.netlify.app/",
     github: "https://github.com/m4rkbello/PARALLAX_EFFECT"
   },
@@ -177,7 +177,7 @@ export const PROJECTS_DATA = [
     title: "3D PORTFOLIO",
     description: "A portfolio website showcasing a vivid color scheme and modern 3D design.",
     tags: ["HTML", "CSS", "JAVASCRIPT"],
-    image: "/images/projects/markbello3dportfolio.jpg",
+    image: "/images/projects/markbello3dportfolio.png",
     link: "https://m4rkbello3dportfolio.netlify.app/",
     github: "https://github.com/m4rkbello/3D_PORTFOLIO"
   },
