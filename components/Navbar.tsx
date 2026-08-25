@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,14 +28,22 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`fixed top-0 md:top-6 w-full md:w-[85%] md:left-[7.5%] z-50 transition-all duration-300 ${
           scrolled || isOpen
-            ? "bg-slate-900/40 md:bg-white/5 backdrop-blur-xl border-b md:border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] md:rounded-full"
+            ? "bg-black/60 md:bg-white/5 backdrop-blur-xl border-b md:border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] md:rounded-full"
             : "bg-transparent border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#home" className="text-2xl font-bold tracking-tighter text-white z-50">
-            Alex<span className="text-sky-400">.</span>
+          
+          {/* 2. Replaced text with your Logo Image */}
+          <a href="#home" className="z-50 block">
+            <Image 
+              src="/logo.png" 
+              alt="Mark Bello Logo" 
+              width={150} 
+              height={50} 
+              className="h-10 w-auto object-contain"
+              priority 
+            />
           </a>
           
           {/* Desktop Links */}
@@ -43,11 +52,11 @@ export default function Navbar() {
               <a 
                 key={link} 
                 href={`#${link.toLowerCase()}`} 
-                className="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
               >
                 {link}
-                {/* Underline hover effect */}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-sky-400 transition-all duration-300 group-hover:w-full rounded-full"></span>
+                {/* Underline hover effect updated to green */}
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-green-500 transition-all duration-300 group-hover:w-full rounded-full"></span>
               </a>
             ))}
           </div>
@@ -56,7 +65,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <a 
               href="#contact" 
-              className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-sm font-medium text-white transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+              className="px-6 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium text-white transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:border-green-500/50"
             >
               Let's Talk
             </a>
@@ -67,7 +76,7 @@ export default function Navbar() {
             className="md:hidden text-white z-50 p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={28} className="text-green-400" /> : <Menu size={28} className="text-green-400" />}
           </button>
         </div>
       </motion.nav>
@@ -80,14 +89,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-slate-950/90 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {links.map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
                 onClick={() => setIsOpen(false)}
-                className="text-3xl font-bold text-slate-300 hover:text-sky-400 transition-colors"
+                className="text-3xl font-bold text-gray-300 hover:text-green-400 transition-colors"
               >
                 {link}
               </a>
@@ -95,7 +104,7 @@ export default function Navbar() {
             <a 
               href="#contact" 
               onClick={() => setIsOpen(false)}
-              className="mt-4 px-8 py-4 rounded-full bg-sky-500/20 border border-sky-500/50 text-xl font-medium text-sky-300 transition-all"
+              className="mt-4 px-8 py-4 rounded-full bg-green-500/20 border border-green-500/50 text-xl font-medium text-green-400 transition-all"
             >
               Let's Talk
             </a>
