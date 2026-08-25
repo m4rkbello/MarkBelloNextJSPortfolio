@@ -10,3 +10,25 @@ npx shadcn-ui@latest add button card badge input textarea
 npm install framer-motion lucide-react clsx tailwind-merge
 npm install clsx tailwind-merge
 npm install react-icons
+
+
+4. SUNOD NI BOANG
+
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+export default config;
+
+5. THEN KANI BOGO KA 
+
+npx shadcn-ui@latest add button badge
