@@ -1,18 +1,51 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import GlassCard from "@/components/GlassCard";
 import FadeIn from "@/components/FadeIn";
 import { 
   ExternalLink, Terminal, Database, Layout, Code2, 
-  Server, Smartphone, BookOpen, Mail, Palette, Cpu 
+  Server, Smartphone, BookOpen, Mail, Palette, Cpu, LucideIcon 
 } from "lucide-react";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { IconType } from "react-icons";
 
 // ==========================================
-// 1. YOUR CUSTOM DATA INTEGRATION
+// 1. TYPESCRIPT INTERFACES TO PREVENT ERRORS
 // ==========================================
-export const SITE_CONTENT = {
+interface SocialLink {
+  platform: string;
+  url: string;
+  icon: IconType | LucideIcon;
+}
+
+interface SiteContent {
+  brand: { name: string; resume: string };
+  hero: {
+    greeting: string;
+    name: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    status: string;
+  };
+  about: {
+    title: string;
+    description: string[];
+  };
+  contact: {
+    title: string;
+    description: string;
+    email: string;
+    socialLinks: SocialLink[];
+  };
+}
+
+// ==========================================
+// 2. YOUR CUSTOM DATA INTEGRATION
+// ==========================================
+export const SITE_CONTENT: SiteContent = {
   brand: { name: "M4RKBELLO", resume: "/CV/RESUME(MARK_BELLO).pdf" },
   hero: {
     greeting: "Hi, I'm",
@@ -31,6 +64,8 @@ export const SITE_CONTENT = {
   },
   contact: {
     email: "markamarcortejopanesbello@gmail.com",
+    title: "Let's Connect",
+    description: "I'm always open to new opportunities.",
     socialLinks: [
       { platform: "GitHub", url: "https://github.com/m4rkbello", icon: FaGithub },
       { platform: "YouTube", url: "https://www.youtube.com/@m4rkbello", icon: FaYoutube },
@@ -86,7 +121,7 @@ export const PROJECTS_DATA = [
     title: "PANGUTANAI",
     description: "Your Intelligent AI Assistant powered by Google Gemini 2.5 Flash.",
     tags: ["React", "TailwindCSS", "Google Gemini"],
-    image: "/images/projects/pangutanai.png",
+    image: "/images/projects/pangutanai.jpg",
     link: "https://pangutanai.netlify.app/",
     github: "https://github.com/m4rkbello/pangutanAI"
   },
@@ -102,7 +137,7 @@ export const PROJECTS_DATA = [
     title: "PHILIPPINE ADDRESS SELECTOR",
     description: "A seamless web application for selecting accurate Philippine addresses dynamically.",
     tags: ["ReactJS", "Vite", "TailwindCSS"],
-    image: "/images/projects/ph-address-selector.png",
+    image: "/images/projects/ph-address-selector.jpg",
     link: "https://philippine-address-selector.netlify.app/",
     github: "https://github.com/m4rkbello/philippine-address-selector"
   },
@@ -126,7 +161,7 @@ export const PROJECTS_DATA = [
     title: "MY HEART WENT OOPS",
     description: "Interactive animations merging two photos seamlessly.",
     tags: ["ReactJS", "Vite", "Framer Motion"],
-    image: "/images/projects/myheartwentnice.png",
+    image: "/images/projects/myheartwentnice.jpg",
     link: "https://myheartwentnice.netlify.app/",
     github: "https://github.com/m4rkbello/MyHeartWentOps"
   },
@@ -134,7 +169,7 @@ export const PROJECTS_DATA = [
     title: "PARALLAX EFFECT",
     description: "A visually engaging web layout showcasing advanced CSS parallax manipulations.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
-    image: "/images/projects/markbelloparallaxeffect.png",
+    image: "/images/projects/markbelloparallaxeffect.jpg",
     link: "https://markbello-parallax-effect.netlify.app/",
     github: "https://github.com/m4rkbello/PARALLAX_EFFECT"
   },
@@ -142,7 +177,7 @@ export const PROJECTS_DATA = [
     title: "3D PORTFOLIO",
     description: "A portfolio website showcasing a vivid color scheme and modern 3D design.",
     tags: ["HTML", "CSS", "JAVASCRIPT"],
-    image: "/images/projects/markbello3dportfolio.png",
+    image: "/images/projects/markbello3dportfolio.jpg",
     link: "https://m4rkbello3dportfolio.netlify.app/",
     github: "https://github.com/m4rkbello/3D_PORTFOLIO"
   },
