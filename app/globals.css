@@ -2,23 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #0f172a; /* slate-900 */
-  --foreground: #f8fafc; /* slate-50 */
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    /* ... (keep the rest of the shadcn variables generated here) ... */
+  }
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
 }
 
 /* Animated Background Orbs */
 .orb-1, .orb-2 {
   position: fixed;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(100px);
   z-index: -1;
   animation: float 20s infinite ease-in-out alternate;
 }
@@ -28,7 +32,7 @@ body {
   left: -10%;
   width: 50vw;
   height: 50vw;
-  background: rgba(56, 189, 248, 0.15); /* Sky blue */
+  background: rgba(56, 189, 248, 0.12);
 }
 
 .orb-2 {
@@ -36,7 +40,7 @@ body {
   right: -10%;
   width: 60vw;
   height: 60vw;
-  background: rgba(168, 85, 247, 0.15); /* Purple */
+  background: rgba(168, 85, 247, 0.12);
   animation-delay: -10s;
 }
 
