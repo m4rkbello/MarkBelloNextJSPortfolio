@@ -5,8 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alex | Portfolio",
-  description: "Modern Glassmorphism Portfolio",
+  title: "Mark Bello | Portfolio",
+  description: "Software Engineer",
+  icons: {
+    icon: "/public/logo.png",
+  },
 };
 
 export default function RootLayout({
