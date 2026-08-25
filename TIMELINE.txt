@@ -41,3 +41,5 @@ rm -rf .next
 npm install tailwindcss-animate
 
 npx shadcn-ui@latest add button badge --overwrite
+
+npm install class-variance-authority @radix-ui/react-slot
