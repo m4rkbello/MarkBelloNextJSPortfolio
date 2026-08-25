@@ -76,7 +76,7 @@
   left: -10%;
   width: 50vw;
   height: 50vw;
-  background: rgba(56, 189, 248, 0.12);
+background: rgba(34, 197, 94, 0.12); /* Primary Green */
 }
 
 .orb-2 {
@@ -84,7 +84,7 @@
   right: -10%;
   width: 60vw;
   height: 60vw;
-  background: rgba(168, 85, 247, 0.12);
+background: rgba(255, 255, 255, 0.05); /* White/Silver */
   animation-delay: -10s;
 }
 
