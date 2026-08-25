@@ -4,4 +4,7 @@
 2. KANI SUNOD BOANG 
 ->npx shadcn-ui@latest init
 
-3. SUNOD DAYON NI
+3. SUNOD DAYON NI 
+npm install framer-motion lucide-react
+npx shadcn-ui@latest add button card badge input textarea
+npm install framer-motion lucide-react clsx tailwind-merge
