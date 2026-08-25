@@ -1,7 +1,10 @@
 import Navbar from "@/components/Navbar";
 import GlassCard from "@/components/GlassCard";
 import FadeIn from "@/components/FadeIn";
-import { ExternalLink, Github, Terminal, Database, Layout, Code2 } from "lucide-react";
+// Notice Github is removed from this line:
+import { ExternalLink, Terminal, Database, Layout, Code2 } from "lucide-react";
+// And imported from react-icons here:
+import { FaGithub } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -41,7 +44,8 @@ export default function Home() {
                 Explore Work
               </a>
               <a href="https://github.com" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 backdrop-blur-md font-semibold transition-colors flex items-center gap-2">
-                <Github size={20} />
+                {/* Updated Icon Here */}
+                <FaGithub size={20} />
                 GitHub
               </a>
             </div>
