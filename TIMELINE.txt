@@ -1,0 +1,7 @@
+1. UNA INSTALL NIMO BOMBOANG
+->npx create-next-app@latest markbellonextjsportfolio
+
+2. KANI SUNOD BOANG 
+->npx shadcn-ui@latest init
+
+3. SUNOD DAYON NI
