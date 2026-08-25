@@ -8,3 +8,4 @@
 npm install framer-motion lucide-react
 npx shadcn-ui@latest add button card badge input textarea
 npm install framer-motion lucide-react clsx tailwind-merge
+npm install clsx tailwind-merge
